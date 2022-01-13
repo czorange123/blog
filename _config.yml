@@ -81,12 +81,12 @@ theme: oranges
 deploy:
   type: git
   message: update pages
-  repo: root@149.248.3.212:/var/www/blog.git
-  branch: master
+  # repo: root@149.248.3.212:/var/www/blog.git
+  # branch: master
 
   # 部署github pages
-  # repo: https://github.com/zchengsite/blog.git
-  # branch: gh-pages
+  repo: git@github.com:zchengsite/zchengsite.github.io.git
+  branch: gh-pages
 
 # hexo-algolia
 # algolia:
