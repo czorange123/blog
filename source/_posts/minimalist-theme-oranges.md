@@ -6,6 +6,7 @@ tags:
 categories:
   - Hexo
   - Theme design
+top: true
 ---
 ### 初衷
 Hexo主题库看了不少，也用了不少，但一直没有找到符合自己风格的主题。所以在阅读了Hexo官方文档，参考其他主题开发者的思路后，搞出了一个仅仅符合自己审美的主题 - `Oranges`。 虽然简单，但我喜欢。

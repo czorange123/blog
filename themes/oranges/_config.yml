@@ -71,6 +71,11 @@ comments:
     enable: false
     shortname: zcheng
 
+  # waline https://waline.js.org
+  waline:
+    enable: false
+    serverURL:
+
 # 主题页面导航栏
 navbar:
   -

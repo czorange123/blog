@@ -57,8 +57,8 @@ comments:
     # https://valine.js.org/quickstart.html#%E8%8E%B7%E5%8F%96APP-ID-%E5%92%8C-APP-Key
     # 进入以上网址查看官方教程
     enable: true
-    appId: j73OlR745tdiYMdFRzbTPDrO-gzGzoHsz
-    appKey: mhyUfuvzMqhq02Fjxk41wc25
+    appId: yunl2RdFVtrE8bDTRrLz8zYl-gzGzoHsz
+    appKey: dUlRrmyYw4LBIoxBEYxksCPP
     placeholder: Welcome!
     avatar: retro
     vempty_display: false
@@ -70,6 +70,11 @@ comments:
     # 例：我注册配置完毕后的网址为zxcxxxx.disqus.com，zxcxxxx即为shortname
     enable: false
     shortname: zcheng
+
+  # waline https://waline.js.org
+  waline:
+    enable: false
+    serverURL:
 
 # 主题页面导航栏
 navbar:
