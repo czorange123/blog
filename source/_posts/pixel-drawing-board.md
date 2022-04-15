@@ -14,7 +14,7 @@ categories:
 
 演示画一个bilibili小电视
 
-![bilibili小电视](https://qiniu.zcheng.site/pixel-drawing-board/draw_demo.gif)
+![bilibili小电视](/images/pixel-drawing-board/draw_demo.gif)
 
 ### 设计思路
 

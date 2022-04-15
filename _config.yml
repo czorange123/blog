@@ -125,7 +125,7 @@ node_sass:
 lazyload:
   enable: true
   onlypost: false # optional
-  loadingImg: https://qiniu.zcheng.site/image-loading.svg
+  loadingImg: /images/image-loading.svg
   isSPA: false # optional
 
 search:
