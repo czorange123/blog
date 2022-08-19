@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Zcheng" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      git-cli 
+      
+      
+      |
+    
+     Oranges
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126364107-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-126364107-1');
+    </script>
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Oranges" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">朋友</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">git-cli</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+          2022-08-15 15:23:51
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h3 id="关于版本控制"><a href="#关于版本控制" class="headerlink" title="关于版本控制"></a>关于版本控制</h3><hr>
+<h3 id="正常工作流"><a href="#正常工作流" class="headerlink" title="正常工作流"></a>正常工作流</h3><h4 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h4><p><code>git config</code></p>
+<ul>
+<li>配置用户名称与邮件地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;John Doe&quot;</span></span><br><span class="line">git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure></li>
+<li>配置默认文本编辑器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor emacs</span><br></pre></td></tr></table></figure></li>
+<li>查看配置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="克隆-初始化仓库"><a href="#克隆-初始化仓库" class="headerlink" title="克隆/初始化仓库"></a>克隆/初始化仓库</h4><p><code>git clone</code></p>
+<ul>
+<li><p>协议</p>
+<ul>
+<li>本地协议（Local）</li>
+<li>HTTP 协议</li>
+<li>SSH（Secure Shell）协议</li>
+<li>Git 协议</li>
+</ul>
+</li>
+<li><p>生成 SSH 公钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>详情见<a href="./sshkeys.html">ssh key密钥生成与使用</a></p>
+</li>
+</ul>
+<p><code>git init</code></p>
+<ul>
+<li>config文件<ul>
+<li><code>HEAD</code>  指示目前被检出的分支</li>
+<li><code>config</code> 包含项目特有的配置选项</li>
+<li><code>description</code> 仅供 GitWeb 程序使用</li>
+<li><code>hooks/</code> 包含客户端或服务端的钩子脚本（hook scripts）</li>
+<li><code>info/</code> 包含一个全局性排除（global exclude）文件</li>
+<li><code>objects/</code> 存储所有数据内容</li>
+<li><code>refs/</code> 存储指向数据（分支）的提交对象的指针</li>
+<li><code>index</code> 保存暂存区信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="检查分支"><a href="#检查分支" class="headerlink" title="检查分支"></a>检查分支</h4><p>git分支本质上仅仅是指向提交对象的可变指针，可向前向后自由移动，它会在每次的提交操作中自动向前移动。</p>
+<ul>
+<li>查看分支<br><code>git branch</code></li>
+<li>新建分支<br><code>git branch 分支名</code></li>
+<li>切换分支<br><code>git checkout/switch</code></li>
+<li>删除本地分支</li>
+<li><code>git branch -D|d</code></li>
+</ul>
+<h4 id="检查当前文件状态"><a href="#检查当前文件状态" class="headerlink" title="检查当前文件状态"></a>检查当前文件状态</h4><p><code>git status</code></p>
+<ul>
+<li>文件的三种状态<ul>
+<li>已提交（committed）</li>
+<li>已修改（modified）</li>
+<li>已暂存（staged）</li>
+</ul>
+</li>
+</ul>
+<h4 id="查看内容修改前后更改"><a href="#查看内容修改前后更改" class="headerlink" title="查看内容修改前后更改"></a>查看内容修改前后更改</h4><p><code>git diff</code></p>
+<h4 id="跟踪新-已修改文件-修改内容添加到暂存区"><a href="#跟踪新-已修改文件-修改内容添加到暂存区" class="headerlink" title="跟踪新/已修改文件(修改内容添加到暂存区)"></a>跟踪新/已修改文件(修改内容添加到暂存区)</h4><p><code>git add</code></p>
+<p>多功能命令，跟踪新文件或将已跟踪文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态，可理解为“添加内容到下一次提交中”</p>
+<h4 id="记录对存储库的更改-提交"><a href="#记录对存储库的更改-提交" class="headerlink" title="记录对存储库的更改(提交)"></a>记录对存储库的更改(提交)</h4><p><code>git commit</code></p>
+<ul>
+<li>常用参数<ul>
+<li>-m，本次提交简易说明</li>
+<li>–amend -m，修改本次提交说明</li>
+<li>-a，将修改且追踪的文件添加到暂存区，且记录</li>
+</ul>
+</li>
+</ul>
+<h4 id="拉取线上代码"><a href="#拉取线上代码" class="headerlink" title="拉取线上代码"></a>拉取线上代码</h4><p><code>git pull</code></p>
+<p>多功能命令，将来自远程存储库的更改合并到当前分支中，等同于<code>git fetch &amp;&amp; git merge</code></p>
+<h4 id="推送代码"><a href="#推送代码" class="headerlink" title="推送代码"></a>推送代码</h4><p><code>git push</code></p>
+<p>新分支推送时需关联上游分支</p>
+<hr>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="代码合并相关"><a href="#代码合并相关" class="headerlink" title="代码合并相关"></a>代码合并相关</h4><p>合并分支<br><code>git merge</code></p>
+<p>合并提交<br><code>git cherry-pick</code></p>
+<p>变基<br><code>git rebase</code></p>
+<p>快进合并&amp;三方合并</p>
+<h4 id="commitId相关"><a href="#commitId相关" class="headerlink" title="commitId相关"></a>commitId相关</h4><p>查看历史提交<br><code>git log</code></p>
+<h4 id="储藏"><a href="#储藏" class="headerlink" title="储藏"></a>储藏</h4><p><code>git stash</code></p>
+<ul>
+<li>将修改储藏起来<br><code>git stash save</code></li>
+<li>查看储藏内容<br><code>git stash list</code></li>
+<li>应用某个储藏<br><code>git stash apply 储藏名</code></li>
+<li>删除某个储藏<br><code>git stash drop 储藏名</code></li>
+<li>删除所有储藏<br><code>git stash clear</code></li>
+</ul>
+<h3 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h3><h4 id="合并多个commit为一个"><a href="#合并多个commit为一个" class="headerlink" title="合并多个commit为一个"></a>合并多个commit为一个</h4><h4 id="worktree使用"><a href="#worktree使用" class="headerlink" title="worktree使用"></a>worktree使用</h4><h4 id="contains使用"><a href="#contains使用" class="headerlink" title="contains使用"></a>contains使用</h4>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
+              2022-08-15 15:23:51
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-text">关于版本控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">正常工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">初始配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%8B%E9%9A%86-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-text">克隆&#x2F;初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E5%88%86%E6%94%AF"><span class="toc-text">检查分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="toc-text">检查当前文件状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AE%B9%E4%BF%AE%E6%94%B9%E5%89%8D%E5%90%8E%E6%9B%B4%E6%94%B9"><span class="toc-text">查看内容修改前后更改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9F%E8%B8%AA%E6%96%B0-%E5%B7%B2%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6-%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">跟踪新&#x2F;已修改文件(修改内容添加到暂存区)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E5%AF%B9%E5%AD%98%E5%82%A8%E5%BA%93%E7%9A%84%E6%9B%B4%E6%94%B9-%E6%8F%90%E4%BA%A4"><span class="toc-text">记录对存储库的更改(提交)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E7%BA%BF%E4%B8%8A%E4%BB%A3%E7%A0%81"><span class="toc-text">拉取线上代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81"><span class="toc-text">推送代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%E7%9B%B8%E5%85%B3"><span class="toc-text">代码合并相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commitId%E7%9B%B8%E5%85%B3"><span class="toc-text">commitId相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%82%A8%E8%97%8F"><span class="toc-text">储藏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">常用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcommit%E4%B8%BA%E4%B8%80%E4%B8%AA"><span class="toc-text">合并多个commit为一个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#worktree%E4%BD%BF%E7%94%A8"><span class="toc-text">worktree使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#contains%E4%BD%BF%E7%94%A8"><span class="toc-text">contains使用</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'yunl2RdFVtrE8bDTRrLz8zYl-gzGzoHsz',
+        appKey: 'dUlRrmyYw4LBIoxBEYxksCPP',
+        placeholder: 'Welcome!',
+        avatar: 'retro',
+        lang: 'zh-CN'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2022 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          sv：<span id="busuanzi_value_site_pv"></span>
+        
+      
+          pv：<span id="busuanzi_value_page_pv"></span>
+        
+      
+          uv：<span id="busuanzi_value_site_uv"></span>
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + git-cli + '&url=' + https%3A%2F%2Fzcheng.site%2Fprivate%2Fgit-cli.html + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://zcheng.site/private/git-cli.html" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
