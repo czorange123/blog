@@ -159,6 +159,28 @@ footer:
       name: Theme by Oranges | Powered by Hexo
       path: https://github.com/zchengsite/hexo-theme-oranges
 
+  # 浏览量统计
+  # http://busuanzi.ibruce.info/
+  views:
+    enable: true
+    provider: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+    item:
+      -
+        enable: true
+        id: busuanzi_value_site_pv
+        name: sv：
+        unit:
+      -
+        enable: true
+        id: busuanzi_value_page_pv
+        name: pv：
+        unit:
+      -
+        enable: true
+        id: busuanzi_value_site_uv
+        name: uv：
+        unit:
+
 # 文章搜索
 search:
   enable: true
@@ -231,3 +253,6 @@ cdns:
     waline:
       enable: false
       url: https://cdn.jsdelivr.net/npm/@waline/client@2.5.1/dist/legacy.min.js
+
+# 主题色
+themeColor: '#ed7d32'
